@@ -7,8 +7,8 @@ NUM_MASTER_NODE = 1
 NUM_WORKER_NODE = 2
 
 IP_NW = "192.168.56."
-MASTER_IP_START = 1
-NODE_IP_START = 2
+MASTER_IP_START = 2
+NODE_IP_START = 1
 LB_IP_START = 30
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
