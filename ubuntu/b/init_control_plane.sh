@@ -9,7 +9,10 @@ sudo kubeadm init --control-plane-endpoint ${LOADBALANCER_IP}:6443 --apiserver-a
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 
 # Run below command on the second master
-sudo kubeadm join 192.168.5.30:6443 --token ubbeta.fm6v9f7bkf34liyk     --discovery-token-ca-cert-hash sha256:ddadbdebca096b96f34332a0519aaee24941bffd7374f516d9298bae9160eb44     --control-plane --certificate-key 1b90dbf6dc4b547e99a15619c0d93cd84f568904ed87913a9db4502e7fba2b8c --apiserver-advertise-address 192.168.5.12
+sudo kubeadm join 192.168.5.30:6443 --token n9rcka.lzuw43vpixqcjpzh --discovery-token-ca-cert-hash sha256:7812075a5037c4cef90212b77cebd2dd56ff8b5e8db642f295c1828b5daaabec --control-plane --certificate-key 76e7212f4c8f278b6e6eaf7c29240237ba26f0c815d76b96598cb587c9f1a53e --apiserver-advertise-address 192.168.5.12
 
 # Run below command on the third master
-sudo kubeadm join 192.168.5.30:6443 --token ubbeta.fm6v9f7bkf34liyk     --discovery-token-ca-cert-hash sha256:ddadbdebca096b96f34332a0519aaee24941bffd7374f516d9298bae9160eb44     --control-plane --certificate-key 1b90dbf6dc4b547e99a15619c0d93cd84f568904ed87913a9db4502e7fba2b8c --apiserver-advertise-address 192.168.5.13
+sudo kubeadm join 192.168.5.30:6443 --token n9rcka.lzuw43vpixqcjpzh --discovery-token-ca-cert-hash sha256:7812075a5037c4cef90212b77cebd2dd56ff8b5e8db642f295c1828b5daaabec --control-plane --certificate-key 76e7212f4c8f278b6e6eaf7c29240237ba26f0c815d76b96598cb587c9f1a53e --apiserver-advertise-address 192.168.5.13
+
+# Run below command on worker nodes
+sudo kubeadm join 192.168.5.30:6443 --token n9rcka.lzuw43vpixqcjpzh --discovery-token-ca-cert-hash sha256:7812075a5037c4cef90212b77cebd2dd56ff8b5e8db642f295c1828b5daaabec
