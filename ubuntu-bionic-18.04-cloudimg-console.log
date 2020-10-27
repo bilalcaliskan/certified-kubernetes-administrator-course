@@ -1,0 +1,14 @@
+[ 4124.708941] Out of memory: Kill process 14740 (exe) score 61 or sacrifice child
+[ 4124.709493] Killed process 14740 (exe) total-vm:607012kB, anon-rss:30200kB, file-rss:0kB, shmem-rss:0kB
+[ 4293.204195] Out of memory: Kill process 14721 (exe) score 62 or sacrifice child
+[ 4293.204765] Killed process 14721 (exe) total-vm:754540kB, anon-rss:30764kB, file-rss:0kB, shmem-rss:0kB
+[ 4333.355883] Out of memory: Kill process 14716 (exe) score 62 or sacrifice child
+[ 4333.356419] Killed process 14716 (exe) total-vm:754540kB, anon-rss:30632kB, file-rss:0kB, shmem-rss:0kB
+[ 4527.426579] Out of memory: Kill process 14722 (exe) score 62 or sacrifice child
+[ 4527.427187] Killed process 14722 (exe) total-vm:754540kB, anon-rss:30624kB, file-rss:0kB, shmem-rss:0kB
+[ 4587.444166] Out of memory: Kill process 15060 (exe) score 62 or sacrifice child
+[ 4587.444678] Killed process 15060 (exe) total-vm:680808kB, anon-rss:30840kB, file-rss:0kB, shmem-rss:0kB
+[ 4601.956289] Out of memory: Kill process 15059 (exe) score 62 or sacrifice child
+[ 4601.956892] Killed process 15059 (exe) total-vm:680808kB, anon-rss:30800kB, file-rss:0kB, shmem-rss:0kB
+[ 4607.328242] Out of memory: Kill process 15062 (exe) score 62 or sacrifice child
+[ 4607.328849] Killed process 15062 (exe) total-vm:680808kB, anon-rss:30768kB, file-rss:0kB, shmem-rss:0kB
