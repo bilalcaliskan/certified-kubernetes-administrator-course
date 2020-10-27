@@ -1,0 +1,3 @@
+- en az 1 worker node daha var mı?
+- bootstrap yapabildim ama önce cgroup a kızdı onu değiştirmek gerekti. sınavda karşılaştın mı?
+- "no networks found in /etc/cni/net.d" diyor. burda sınavda da mı yoktu pluginler? en az 1 worker daha varsa ordan alıp atsak?
