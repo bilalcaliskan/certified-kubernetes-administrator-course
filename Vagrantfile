@@ -16,14 +16,14 @@ Vagrant.configure("2") do |config|
   config.vm.box_check_update = false
 
   # Provision master node
-  config.vm.define "master" do |node|
+  config.vm.define "single-master" do |node|
     # Name shown in the GUI
     node.vm.provider "virtualbox" do |vb|
-      vb.name = "master"
+      vb.name = "single-master"
       vb.memory = 2048
       vb.cpus = 2
     end
-    node.vm.hostname = "master"
+    node.vm.hostname = "single-master"
     node.vm.network :private_network, ip: IP_NW + "#{MASTER_IP_START + 1}"
     node.vm.network "forwarded_port", guest: 22, host: "#{2710 + 1}"
     node.vm.provision "setup-hosts", :type => "shell", :path => "ubuntu/vagrant/setup-hosts.sh" do |s|
@@ -35,15 +35,15 @@ Vagrant.configure("2") do |config|
 
   # Provision worker nodes
   (1..NUM_WORKER_NODE).each do |i|
-    config.vm.define "worker-#{i}" do |node|
+    config.vm.define "single-worker-#{i}" do |node|
         node.vm.provider "virtualbox" do |vb|
-            vb.name = "worker-#{i}"
+            vb.name = "single-worker-#{i}"
             vb.memory = 1024
             vb.cpus = 1
         end
-        node.vm.hostname = "worker-#{i}"
+        node.vm.hostname = "single-worker-#{i}"
         node.vm.network :private_network, ip: IP_NW + "#{NODE_IP_START + i}"
-	node.vm.network "forwarded_port", guest: 22, host: "#{2720 + i}"
+	      node.vm.network "forwarded_port", guest: 22, host: "#{2720 + i}"
         node.vm.provision "setup-hosts", :type => "shell", :path => "ubuntu/vagrant/setup-hosts.sh" do |s|
           s.args = ["enp0s8"]
         end
