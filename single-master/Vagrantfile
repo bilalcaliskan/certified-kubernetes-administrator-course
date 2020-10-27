@@ -26,11 +26,11 @@ Vagrant.configure("2") do |config|
     node.vm.hostname = "single-master"
     node.vm.network :private_network, ip: IP_NW + "#{MASTER_IP_START + 1}"
     node.vm.network "forwarded_port", guest: 22, host: "#{2710 + 1}"
-    node.vm.provision "setup-hosts", :type => "shell", :path => "ubuntu/vagrant/setup-hosts.sh" do |s|
+    node.vm.provision "setup-hosts", :type => "shell", :path => "../scripts/setup-hosts.sh" do |s|
       s.args = ["enp0s8"]
     end
-    node.vm.provision "setup-dns", type: "shell", :path => "ubuntu/update-dns.sh"
-    node.vm.provision "file", source: "./ubuntu/cert_verify.sh", destination: "$HOME/"
+    node.vm.provision "setup-dns", type: "shell", :path => "../scripts/update-dns.sh"
+    node.vm.provision "file", source: "../scripts/cert_verify.sh", destination: "$HOME/"
   end
 
   # Provision worker nodes
@@ -44,13 +44,13 @@ Vagrant.configure("2") do |config|
         node.vm.hostname = "single-worker-#{i}"
         node.vm.network :private_network, ip: IP_NW + "#{NODE_IP_START + i}"
 	      node.vm.network "forwarded_port", guest: 22, host: "#{2720 + i}"
-        node.vm.provision "setup-hosts", :type => "shell", :path => "ubuntu/vagrant/setup-hosts.sh" do |s|
+        node.vm.provision "setup-hosts", :type => "shell", :path => "../scripts/setup-hosts.sh" do |s|
           s.args = ["enp0s8"]
         end
-        node.vm.provision "setup-dns", type: "shell", :path => "ubuntu/update-dns.sh"
-        node.vm.provision "install-docker", type: "shell", :path => "ubuntu/install-docker-2.sh"
-        node.vm.provision "allow-bridge-nf-traffic", :type => "shell", :path => "ubuntu/allow-bridge-nf-traffic.sh"
-        node.vm.provision "file", source: "./ubuntu/cert_verify.sh", destination: "$HOME/"
+        node.vm.provision "setup-dns", type: "shell", :path => "../scripts/update-dns.sh"
+        node.vm.provision "install-docker", type: "shell", :path => "../scripts/install-docker-2.sh"
+        node.vm.provision "allow-bridge-nf-traffic", :type => "shell", :path => "../scripts/allow-bridge-nf-traffic.sh"
+        node.vm.provision "file", source: "../scripts/cert_verify.sh", destination: "$HOME/"
     end
   end
 end
