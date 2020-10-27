@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Run below commands on the worker nodes
+cat >> ~/.ssh/authorized_keys <<EOF
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmqFXt+1Vsl1g9UbZlnsvZBYlz3fOM6YpTtGgMxxIroMI3y9N6ZEsGjROkyjcRib9BpIxlXoVrCOSvDaecbLSIU9fv7OQX6Btg9I8gJWibOKfDXUNb6joZcfxnv5p+rwR6/rzwiHNE3cNTZ2Elp/g8j0WhxnYKS0VJINN6Q2v0kZAG/41Xh0f+TNpJ6XCasjCTDP4UFzpnIx38U2ZAmtiA1rzS2nGuxq/vxN/fB+ZpFegDQWoTSq/s8oY/SKmB0gPQUpL7ExVrOdWGftuEY4aJcvavJSezaaojXxddBFC8bHI2eqTNk8pWxcg64WfvTnevI2xKTmAiVPmL9J0J05kn vagrant@master
+EOF
